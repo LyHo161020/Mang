@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="bai1" onclick="bai1()">
+    <input type="submit" value="bai2" onclick="bai2()">
+    <input type="submit" value="bai3" onclick="bai3()">
+    <input type="submit" value="bai4" onclick="bai4()">
+    <input type="submit" value="bai5" onclick="bai5()">
+    <input type="submit" value="bai6" onclick="bai6()">
+    <p id="res"></p>
+
+    <script>
+        const bai1 = () => {
+            let arr = [
+                [1, 2, 1, 24],
+                [8, 11, 9, 4],
+                [7, 0, 7, 27],
+                [7, 4, 28, 14],
+                [3, 10, 26, 7]
+            ];
+
+            for (i = 0; i < arr.length; i++) {
+                document.write(`"row ${i}" </br>`);
+                for (j = 0; j < arr[0].length; j++) {
+                    document.write(`"${arr[i][j]}" </br>`);
+                }
+            }
+        }
+
+        const bai2 = () => {
+            let str=prompt("nhập 1 chuỗi các kí tự có trong mảng(ngăn cách bởi dấu ,):");
+            let arr=str.split(",");
+            arr.reverse();
+            document.getElementById("res").innerHTML=arr.join("");
+        }
+
+        const bai3 = () => {
+            let count=0;
+            let str=prompt("nhập 1 chuỗi các kí tự có trong mảng(ngăn cách bởi dấu ,):");
+            let arr=str.split(",");
+            for(let i=0;i<arr.length;i++) {
+                if(Number.isInteger(Number(arr[i]))) {
+                    count++;
+                }
+            }
+            alert(`Số kí tự số trong chuỗi vừa nhập là:${count}`);
+        }
+
+        const bai4 = () => {
+            let str=prompt("nhập 1 chuỗi các kí tự:");
+            let arr=str.split(" ");
+            alert(`Số từ trong chuỗi là:${arr.length}`);
+        }
+
+
+        const bai5 = () => {
+            let count=0;
+            let str1=prompt("nhập 1 chuỗi các kí tự:");
+            let arr1=str1.split("");
+            let str2=prompt('nhập 1 chuỗi các kí tự tiếp theo:')
+            let arr2=str2.split("");
+            if(arr1.length!=arr2.length) {
+                alert("Hai chuoi khac nhau!!")
+            } else {
+            for(let i=0;i<arr1.length;i++) {
+                if(arr1[i]==arr2[i]){
+                    count++;
+                }
+            }
+            if(count==arr1.length) {
+                    alert("Hai chuoi giong nhau!!")
+                } else alert("Hai chuoi khac nhau!!");
+            }
+        }
+
+        const bai6 = () => {
+            let count=0;
+            let str=prompt("nhập 1 chuỗi các kí tự có trong mảng(ngăn cách bởi dấu ,):");
+            let arr=str.split(",");
+            for(let i=0;i<arr.length;i++) {
+                if(arr[i]=='-'){
+                    arr[i]='_';
+                }
+            }
+            console.log(arr);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
