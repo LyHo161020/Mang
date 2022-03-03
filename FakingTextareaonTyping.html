@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Type anthing slowly</h3>
+    <form action="#" method="get" name="form">
+        <textarea name="text" id="" cols="40" rows="10" onkeydown="typeTextarea()"></textarea>
+    </form>
+
+    <script>
+        let arr=[];
+        let obj="";
+        arr[1]='T';arr[2]='Ô';arr[3]='I';arr[4]=' ';arr[5]='L';arr[6]='À';arr[7]=' ';arr[8]='M';arr[9]='Ộ';arr[10]='T';arr[11]=' ';arr[12]='Đ';arr[13]='Ứ';arr[14]='A';arr[15]=' ';arr[16]='N';arr[17]='G';arr[18]='Ố';arr[19]='C';arr[20]='!';arr[21]='!';arr[22]='!';
+        const typeTextarea=()=> {
+            let value=document.form.text.value;
+            let j= value.length;
+            if(j>0) {
+                for(let i=1;i<=j;i++) {
+                    obj+=arr[i];
+                    if(i==22) { 
+                        document.form.text.value="";
+                        obj="";
+                    }
+                }
+                }
+            document.form.text.value=obj;
+                        obj="";
+            setTimeout("typeTextarea()", 1);
+        }
+    </script>
+</body>
+</html>
