@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="bai1" onclick="bai1()">
+    <input type="submit" value="bai2" onclick="bai2()">
+    <input type="submit" value="bai3" onclick="bai3()">
+    <input type="submit" value="bai4" onclick="bai4()">
+    <input type="submit" value="bai5" onclick="bai5()">
+    <input type="submit" value="bai6" onclick="bai6()">
+    <input type="submit" value="bai7" onclick="bai7()">
+    <input type="submit" value="bai8" onclick="bai8()">
+    <input type="submit" value="bai9" onclick="bai9()">
+
+    <script>
+        const bai1 = () => {
+            let arr = [];
+            let count = 0, k = 0;
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arr[k] = number;
+                k++;
+            } while (k < 10)
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] >= 10) {
+                    count++;
+                }
+            }
+            alert(`Số số >=10 trong mảng là:${count}`);
+        }
+
+        const bai2 = () => {
+            let arr = [];
+            let max = 0, index, k = 0;
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arr[k] = number;
+                k++;
+            } while (k < 10)
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                    index = i;
+                }
+            }
+            alert(`phần tử có giá trị lớn nhất trong mảng là:${max}    index=${index}`);
+        }
+
+        const bai3 = () => {
+            let arr = [];
+            let max = 0, sum = 0, k = 0;
+            do {
+                number = Number(prompt("nhập số (nhập 1 kí tự khác số để dừng):"));
+                if (Number.isInteger(number)) {
+                    arr[k] = number;
+                }
+                k++;
+            } while (Number.isInteger(number))
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+                sum += arr[i];
+            }
+            alert(`phần tử có giá trị lớn nhất trong mảng là:${max}    trung bình=${sum / arr.length}`);
+        }
+
+        const bai4 = () => {
+            let arr = [];
+            let k = 0, number;
+            do {
+                number = Number(prompt("nhập số (nhập 1 kí tự khác số để dừng):"));
+                if (Number.isInteger(number)) {
+                    arr[k] = number;
+                }
+                k++;
+            } while (Number.isInteger(number))
+            for (let i = 0; i < arr.length; i++) {
+                arr.reverse();
+            }
+            alert(`Mảng sau khi đảo là:${arr}`);
+        }
+
+        const bai5 = () => {
+            let k = 0, number, count = 0;
+            let str = prompt('nhập vào 1 chuỗi :(ngăn cách bởi dấu (,) )');
+            let arr = str.split(",");
+            for (let i = 0; i < arr.length; i++) {
+                number = Number(arr[i]);
+                if (Number.isInteger(number)) {
+                    if (number < 0) {
+                        count++;
+                    }
+                }
+            }
+            alert(`Số số âm trong chuỗi là:${count}`);
+        }
+
+        const bai6 = () => {
+            let k = 0, obj, arr = [];
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arr[k] = number;
+                k++;
+            } while (k < 10)
+            let V = Number(prompt("nhập số cần tìm trong mảng:"))
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == V) {
+                    obj = "V is in the array";
+                    break;
+                } else {
+                    obj = "V is not in the array";
+                }
+            }
+            alert(obj);
+        }
+
+        const bai7 = () => {
+            let k = 0, obj, arr = [];
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arr[k] = number;
+                k++;
+            } while (k < 10)
+            let V = Number(prompt("nhập số cần tìm trong mảng:"))
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == V) {
+                    arr.splice(i, 1);
+                    arr.push(0);
+                }
+            }
+            alert(arr);
+        }
+
+        const bai8 = () => {
+            let k = 0, obj, arr = [];
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arr[k] = number;
+                k++;
+            } while (k < 10)
+            newArr = arr.sort(function (a, b) {
+                return a - b;
+            });
+            alert(newArr);
+        }
+
+        const bai9 = () => {
+            let k = 0, arrA = [], arrB = [], arrC = [], newArr;
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arrA[k] = number;
+                k++;
+            } while (k < 5)
+            k = 0;
+            do {
+                number = Number(prompt("enter 10 number:"));
+                arrB[k] = number;
+                k++;
+            } while (k < 5)
+            console.log(arrB);
+            newArr = arrA.concat(arrB);
+            for (let i = 0; i < newArr.length; i++) {
+                arrC[i] = newArr[i];
+            }
+            alert(arrC);
+        }
+    </script>
+</body>
+
+</html>
