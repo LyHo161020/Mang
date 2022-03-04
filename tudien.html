@@ -18,10 +18,15 @@
             let English = ['chessboard', 'infomation', 'technology', 'build'];
             let enter = document.getElementById("text").value;
             console.log(enter);
-            for (let i = 0; i < English.length; i++) {
+            let i;
+            for ( i = 0; i < English.length; i++) {     
                 if (enter === English[i]) {
                     document.getElementById('res').innerHTML=Vietnamese[i];
-                }
+                    break;
+                }       
+            }
+            if(i==English.length) {
+                   alert("Khong co trong tu dien");
             }
         }
     </script>
